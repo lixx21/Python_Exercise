@@ -7,19 +7,24 @@ Original file is located at
     https://colab.research.google.com/drive/1xIdTcl95TDYlWlRtEGYlJTuqWeierQaU
 """
 
-def fibonacci(length):
-  x = [1,2] # initialize the 2 first number in list
+def fibonacci(length, value1, value2):
+  x = [value1,value2] # initialize the 2 first number in list
   
   if length <=20: #limit the length of fibonacci
-    for i in range(length-len(x)): 
-      x.append(x[-1]+x[-2])
+    for i in range(1, length-1): 
+      x.append(x[i-1]+x[i])
     print("\n=======================\n")
     print("your fibonacci number: \n")
     return x
   else:
     return "\nlength must be less or equal than 20"
 
-print("input length of fibonacci: ")
-length_fibonacci = int(input())
+# print("input length of fibonacci: ")
+length_fibonacci = int(input("input length of fibonacci: "))
+value1 = int(input('value1: '))
+value2 = int(input('value2: '))
 
-print(fibonacci(length_fibonacci))
+print(fibonacci(length_fibonacci, value1, value2))
+
+# x =[1,2]
+# print(x[-2])
